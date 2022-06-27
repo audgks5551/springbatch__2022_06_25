@@ -58,3 +58,11 @@
        initialize-schema: always # 처음 실행시 테이블 만들기
    ```
  - 실무에서는 수동으로 테이블을 만드는데 `org.springframework.batch.core`에 쿼리가 작성되어 있다. 예로는 `schema-mysql.sql`
+
+### SPRING BATCH TABLE
+ - `BATCH_JOB_EXECUTION`는 `job`을 실행했을 때 레코드가 하나씩 생성
+ - `BATCH_JOB_EXECUTION_CONTEXT`는 `job`간의 정보를 공유하기 위한 테이블 (json 형식)
+ - `BATCH_JOB_EXECUTION_PARAMS`는 `job`에 어떤 파라미터를 추가했는지에 대한 테이블
+ - `BATCH_JOB_INSTANCE`는 `job` 인스턴스로 `BATCH_JOB_EXECUTION`와 달리 고유의 `job instance`가 존재한다.
+ - `BATCH_STEP_EXECUTION`는 `step`을 실행했을 때 레코드가 하나씩 생성
+ - `BATCH_STEP_EXECUTION_CONTEXT`는 `step`간의 정보를 공유하기 위한 테이블 (json 형식)
